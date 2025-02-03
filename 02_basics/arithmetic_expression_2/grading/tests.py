@@ -14,7 +14,8 @@ class GradingTests(AccessTestCase):
     def _test(self, a, b, c, expected):
         actual = script.calculateX(a, b, c)
         self.hint("Calculation not correct for a={}, b={}, c={},... expected result is {}!".format(a, b, c, expected))
-        self.assertAlmostEqual(expected, actual, 5)
+        self.assertAlmostEqual(expected[0], actual[0], 5)
+        self.assertAlmostEqual(expected[1], actual[1], 5)
 
     def test_case1(self):
         self._test(1, 5, 2, (-0.438447,-4.56155))
