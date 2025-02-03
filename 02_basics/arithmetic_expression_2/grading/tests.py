@@ -18,7 +18,8 @@ class GradingTests(AccessTestCase):
         self.assertAlmostEqual(expected[1], actual[1], 5)
 
     def test_case1(self):
-        self._test(1, 5, 2, (-0.438447,-4.56155))
+        self.hint("thats a hint")
+        self._test(1, 5, 2, (-2.438447,-4.56155))
 
     def test_case2(self):
         self._test(1, 2, 1, (-1,-1))
