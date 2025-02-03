@@ -17,6 +17,7 @@ end = 2028-01-01T13:00:00
   "friendly_pairs",
   "arithmetic_expression",
   "persistent_results",
+  "arithmetic_expression_2"
 ]
 
 # Information for at least one language must be specified.
