@@ -11,21 +11,15 @@ script = grading_import("task", "script")
 
 class GradingTests(AccessTestCase):
 
-    def _test(self, a, b, c, d, expected):
-        actual = script.calculate(a, b, c, d)
-        self.hint("Calculation not correct for a={}, b={}, c={}, d={}... expected result is {}!".format(a, b, c, d, expected))
+    def _test(self, a, b, c, expected):
+        actual = script.calculateX(a, b, c)
+        self.hint("Calculation not correct for a={}, b={}, c={},... expected result is {}!".format(a, b, c, expected))
         self.assertAlmostEqual(expected, actual, 5)
 
     def test_case1(self):
-        self._test(1, 2, 3, 4, 1.444444)
+        self._test(1, 5, 2, (-0.438447,-4.56155))
 
     def test_case2(self):
-        self._test(2, 3, 4, 5, 2.428571)
-
-    def test_case3(self):
-        self._test(3, 4, 5, 6, 3.432432)
-
-    def test_case4(self):
-        self._test(4, 5, 6, 7, 4.438596)
+        self._test(1, 2, 1, (-1,-1))
 
 TestRunner().run(AccessTestSuite(1, [GradingTests]))
